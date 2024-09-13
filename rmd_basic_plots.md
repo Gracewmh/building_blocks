@@ -1,9 +1,7 @@
----
-title: "Basic Plots"
-author: "Your Name"
-date: "`r Sys.Date()`"
-output: github_document
----
+Basic Plots
+================
+Jeff Goldsmith
+2019-09-10
 
 This repo is store the code of how to use git hub
 
@@ -11,9 +9,7 @@ This repo is store the code of how to use git hub
 
 This document demonstrates basic plotting in R.
 
-```{r pressure-plot, echo=FALSE}
-plot(pressure)
-```
+![](rmd_basic_plots_files/figure-gfm/pressure-plot-1.png)<!-- -->
 
 The plot above shows the relationship between temperature and pressure.
 
@@ -21,36 +17,12 @@ The plot above shows the relationship between temperature and pressure.
 
 This is a simple example of an R Markdown document.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-title: "Basic Plots"
-author: "Jeff Goldsmith"
-date: 2019-09-10
-output: html_document
----
-
-```{r setup, include = FALSE}
-library(tidyverse)
-```
-
-The purpose of this file is to present a couple of basic plots using `ggplot`.
+The purpose of this file is to present a couple of basic plots using
+`ggplot`.
 
 First we create a dataframe containing variables for our plots.
 
-```{r df_create}
+``` r
 set.seed(1234)
 
 plot_df = tibble(
@@ -61,12 +33,18 @@ plot_df = tibble(
 
 First we show a histogram of the `x` variable.
 
-```{r x_hist}
+``` r
 ggplot(plot_df, aes(x = x)) + geom_histogram()
 ```
 
-Next we show a scatterplot of `y` vs `x`. 
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
-```{r yx_scatter}
+![](rmd_basic_plots_files/figure-gfm/x_hist-1.png)<!-- -->
+
+Next we show a scatterplot of `y` vs `x`.
+
+``` r
 ggplot(plot_df, aes(x = x, y = y)) + geom_point()
 ```
+
+![](rmd_basic_plots_files/figure-gfm/yx_scatter-1.png)<!-- -->
